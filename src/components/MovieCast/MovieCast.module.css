@@ -1,0 +1,23 @@
+.list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.list li {
+    background-color: #333333;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    width: 200px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.list li:hover {
+    transform: scale(1.05);
+}
