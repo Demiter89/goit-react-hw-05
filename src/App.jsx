@@ -42,7 +42,7 @@ function App() {
   
   useEffect(() => {
     async function fetchMovies() {
-      const API_KEY = '65e63a43c258a7dd70aa0c13e1b1fe41';
+      const API_KEY = 'b28ce4003d83b7bcee0c9dd6c31484cb';
       const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
       const options = {
         headers: {

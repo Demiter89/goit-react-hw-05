@@ -12,10 +12,10 @@ export default function MovieCast() {
     useEffect(() => {
         async function  fetchMovieCast() {
             try{
-                const API_KEY = '65e63a43c258a7dd70aa0c13e1b1fe41';
+                const API_KEY = 'b28ce4003d83b7bcee0c9dd6c31484cb';
                 const options = {
                     headers: {
-                        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NWU2M2E0M2MyNThhN2RkNzBhYTBjMTNlMWIxZmU0MSIsIm5iZiI6MTc0MjkwMDIzMS43OTAwMDAyLCJzdWIiOiI2N2UyOGMwNzE2YTNjNWMyMjRmMDVlNDEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.Gj5KKh_5hoQkblhe7TtEiniX_OhNq0TGx1HwRS_dyOs'
+                        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMjhjZTQwMDNkODNiN2JjZWUwYzlkZDZjMzE0ODRjYiIsIm5iZiI6MTc0MzI2OTA0MC4zODUsInN1YiI6IjY3ZTgyY2IwYmQxZjk2ZjllZjYzNzNmNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qn6L4dkcZTYQvM4P7dtmd-bkXmoWHxpLe_Pq5ifIBtE'
                     }
                 };
                 
