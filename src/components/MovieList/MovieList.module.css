@@ -8,7 +8,9 @@
 }
 
 .list li {
-    width: 200px;
+    width: calc(100% / 5 - 16px);
+    /* Динамічна ширина для різних екранів */
+    max-width: 200px;
     background: #333333;
     border-radius: 16px;
     display: flex;
@@ -31,18 +33,40 @@
     padding: 12px;
     font-size: 16px;
     font-weight: 600;
-    color: #0d47a1;
+    color: #ffffff;
     text-align: center;
-    background: linear-gradient(135deg, #333333, #bbdefb);
+    background: linear-gradient(135deg, #333333, #1e88e5);
     width: 100%;
 }
 
 .list li:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .list li:active {
     transform: scale(0.97);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Адаптивні стилі */
+@media (max-width: 1024px) {
+    .list li {
+        width: calc(100% / 3 - 16px);
+        /* Для планшетів */
+    }
+}
+
+@media (max-width: 768px) {
+    .list li {
+        width: calc(100% / 2 - 16px);
+        /* Для середніх екранів */
+    }
+}
+
+@media (max-width: 480px) {
+    .list li {
+        width: 100%;
+        /* На мобільних кожен елемент займає всю ширину */
+    }
 }

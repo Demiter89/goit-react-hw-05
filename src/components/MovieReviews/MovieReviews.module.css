@@ -6,45 +6,66 @@
     flex-direction: column;
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
 .list li {
-    background: #333333;
-    padding: 15px;
-    width: 600px;
+    background: #2c2c2e;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
     color: aliceblue;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 12px;
+    border-radius: 12px;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
+.list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 3px 6px 14px rgba(0, 0, 0, 0.2);
 }
 
 .list ul li p {
-    margin: 5px 0;
+    margin: 6px 0;
     font-size: 16px;
-    color: #333;
+    color: #ccc;
 }
 
 .list li p:first-child {
-    color: #fff;
+    font-weight: bold;
+    color: #ffffff;
 }
 
 .list li p:last-child {
     font-size: 14px;
-    color: aliceblue;
-    ;
+    color: #ddd;
 }
 
 .text {
     display: -webkit-box;
     -webkit-line-clamp: 3;
-        /* Для WebKit (Chrome, Safari) */
-        line-clamp: 3;
-        /* Стандартний варіант */
+    /* Для WebKit (Chrome, Safari) */
+    line-clamp: 3;
+    /* Стандартний варіант */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     max-height: 7.5em;
     line-height: 1.5em;
     word-wrap: break-word;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    .list li {
+        width: 100%;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .list li {
+        padding: 12px;
+    }
 }

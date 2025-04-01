@@ -1,23 +1,47 @@
 .nav {
     display: flex;
-    gap: 20px;
-    padding: 10px 20px;
-    background-color: #282c34;
+    gap: 24px;
+    padding: 12px 24px;
+    background-color: #20232a;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
 }
 
 .link {
     text-decoration: none;
     color: white;
     font-size: 18px;
-    transition: color 0.3s ease-in-out;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
 }
 
 .link:hover {
     color: #61dafb;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
 
 .active {
     color: #61dafb;
     font-weight: bold;
-    border-bottom: 2px solid #61dafb;
+    border-bottom: 3px solid #61dafb;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .link {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
 }

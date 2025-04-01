@@ -3,35 +3,48 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 20px auto;
+    padding: 14px 28px;
 
-    padding: 12px 24px;
-    background: linear-gradient(135deg, #4A90E2, #007AFF);
-    color: #fff;
-    font-size: 18px;
+    background: linear-gradient(135deg, #3B82F6, #1E40AF);
+    color: #0727f3;
+
+    font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
+
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
+
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+
+    text-align: center;
+    width: fit-content;
 }
 
 .btnHome:hover {
-    background: linear-gradient(135deg, #007AFF, #0056B3);
-    box-shadow: 0 6px 15px rgba(0, 122, 255, 0.4);
+    background: linear-gradient(135deg, #1E40AF, #162D69);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+    transform: translateY(-3px);
+}
+
+.btnHome:active {
+    transform: scale(0.98);
+    box-shadow: 0 3px 10px rgba(59, 130, 246, 0.4);
 }
 
 .btnHome:focus {
     outline: none;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
 }
 
-.btnHome h1 {
-    margin: 0;
-    font-size: 22px;
+/* Адаптивність */
+@media (max-width: 768px) {
+    .btnHome {
+        font-size: 18px;
+        padding: 12px 20px;
+        width: auto;
+    }
 }

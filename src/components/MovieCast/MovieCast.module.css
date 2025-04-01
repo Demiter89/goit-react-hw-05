@@ -11,13 +11,24 @@
     background-color: #333333;
     border-radius: 8px;
     padding: 12px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease-in-out;
     width: 200px;
     color: aliceblue;
     text-align: center;
+    font-size: 14px;
 }
 
+/* Зміна розміру шрифтів для мобільних пристроїв */
+@media (max-width: 600px) {
+    .list li {
+        width: 100%;
+        font-size: 12px;
+    }
+}
+
+/* Збільшення елементів при наведенні */
 .list li:hover {
     transform: scale(1.05);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
 }
