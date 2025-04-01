@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';  
 import css from './MovieItem.module.css';
 
-export default function MovieItem({ movie }) {
+export default function MovieItem({ movie, location }) {
   const placeholderImage = "https://i.pinimg.com/736x/bc/58/a0/bc58a06c0569b75241989ea92d2e4f83.jpg";
   
   return (
-    <div>
-      <Link to={`/movies/${movie.id}`}>
+    <Link to={`/movies/${movie.id}`} state={{ from: location }}>
+      <div>
         <img 
           className={css.imgCover} 
           src={movie.backdrop_path 
@@ -17,7 +17,7 @@ export default function MovieItem({ movie }) {
           height={112} 
         />
         <p>{movie.title}</p>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }

@@ -1,5 +1,5 @@
-import { useParams } from 'react-router-dom';
-import { useState, useEffect, Suspense } from 'react';
+import { useParams } from 'react-router-dom'; 
+import { useState, useEffect, Suspense, useRef } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import css from './MovieDetailsPage.module.css';
@@ -11,9 +11,12 @@ export default function MovieDetailsPage() {
     const [movie, setMovie] = useState({});
     const location = useLocation();
     const navigate = useNavigate();
+    
+    // Додаємо useRef для збереження location.state
+    const prevLocation = useRef(location.state?.from || "/movies");
 
     const goBack = () => {
-        navigate(location.state?.from || "/movies");
+        navigate(prevLocation.current); // Використовуємо збережену локацію
     };
 
     useEffect(() => {
@@ -22,10 +25,8 @@ export default function MovieDetailsPage() {
                 const API_KEY = 'b28ce4003d83b7bcee0c9dd6c31484cb';
                 const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`);
                 setMovie(response.data);
-                
             } catch {
-                toast('Something went wrong', 
-                    {position: 'top-right'});
+                toast('Something went wrong', { position: 'top-right' });
             }
         }
         fetchMovieDetails();
@@ -33,7 +34,6 @@ export default function MovieDetailsPage() {
 
     return (
         <div className={css.container}>
-
             <button className={css.btnBack} onClick={goBack}>Go back</button>
             {movie.backdrop_path ? (
                 <img 
@@ -51,21 +51,17 @@ export default function MovieDetailsPage() {
                 <p className={css.movieTagline}><strong>Tagline:</strong> {movie.tagline || "No tagline available"}</p>
                 <p className={css.movieDetail}><strong>Release Date:</strong> {movie.release_date}</p>
                 <p className={css.movieDetail}><strong>Popularity:</strong> {movie.popularity}</p>
-                <p className={css.movieDetail}>Genres: {movie?.genres?.length ? movie.genres.map(genre => genre.name).join(', ') : 'No genres available'}
-</p>
-
+                <p className={css.movieDetail}>Genres: {movie?.genres?.length ? movie.genres.map(genre => genre.name).join(', ') : 'No genres available'}</p>
 
                 {movie.overview && (
                     <div className={css.movieOverview}>
                         <h3>Overview:</h3>
                         <p>{movie.overview}</p>
                     </div>
-            )}
-
+                )}
             </div>
             
             <ul className={css.navDetails}>
-            
                 <li className={css.castSlide}><Link to="cast">Cast</Link></li>
                 <li className={css.castSlide}><Link to="reviews">Reviews</Link></li>
             </ul>
@@ -73,7 +69,6 @@ export default function MovieDetailsPage() {
             <Suspense fallback={<h2>Loading...</h2>}>
                 <Outlet />
             </Suspense>
-            
         </div>
     );
 }
